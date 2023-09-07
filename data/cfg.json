@@ -1,1 +1,7 @@
-
+{
+	"hostname": "esp", "ssid": "friends", "password": "MinecrafT",
+	"ntp_server": "sunway.home",
+	"alt": "160",
+	"tz": {"period": "summer", "shift_m": "180"},
+	"tz": {"period": "winter", "shift_m": "180"}
+}
