@@ -34,7 +34,7 @@
  * Built Led: 2 
  */
 
- #define FW_VERSION   ("1.01")
+ #define FW_VERSION   ("1.02")
 
 // max7219 interface. Esp8266 pin numbers gpioXX
 const uint8_t M_CS          = 16;                   // Max7219 chip select pin

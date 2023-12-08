@@ -118,7 +118,7 @@ void ntpClock::setDst(bool winter, uint8_t month, uint8_t day, uint8_t week_day,
 }
 
 int32_t ntpClock::TZ(time_t n) {
-    int32_t result = (int32_t)tz[0].utc_shift * 15*60;  // In seconds
+    int32_t result = (int32_t)tz[0].utc_shift * 15*60;  // In seconds (0-th is a summer time) 
     if (tz[0].utc_shift == tz[1].utc_shift) {           // Constant time
         tz[0].month         = 0;    tz[1].month         = 0;
         tz[0].day           = 0;    tz[1].day           = 0;
@@ -137,7 +137,7 @@ int32_t ntpClock::TZ(time_t n) {
         next_s  = next(tz[0].quoter_hour, tz[0].month, tz[0].day, tz[0].w_day, tz[0].w_num, tz[1].utc_shift * 15*60);
     }
     if (next_w > next_s) {                              // Winter time
-        result = (int32_t)tz[0].utc_shift * 15*60;
+        result = (int32_t)tz[1].utc_shift * 15*60;
     }
     return result;
 }
